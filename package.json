@@ -10,6 +10,11 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@radix-ui/react-radio-group": "^1.2.3",
+    "@radix-ui/react-slot": "^1.1.2",
+    "@tailwindcss/vite": "^4.0.9",
+    "axios": "^1.7.9",
+    "class-variance-authority": "^0.7.1",
     "@emailjs/browser": "^4.4.1",
     "@tailwindcss/vite": "^4.0.9",
     "axios": "^1.7.9",
@@ -20,6 +25,8 @@
     "react-dom": "^19.0.0",
     "react-router-dom": "^7.1.1",
     "tailwind-merge": "^3.0.2",
+    "tailwindcss": "^4.0.9",
+    "tailwindcss-animate": "^1.0.7"
     "@reduxjs/toolkit": "^2.6.0",
     "@tailwindcss/vite": "^4.0.9",
     "axios": "^1.7.9",
