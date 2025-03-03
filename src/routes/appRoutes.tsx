@@ -3,6 +3,8 @@ import { createBrowserRouter } from "react-router-dom";
 import ProfilePage from "../pages/ProfilePage";
 import GymBranch from "../pages/GymBranch";
 import Layout from "../pages/Layout";
+import Promotion from "../pages/Promotion";
+import Contact from "../pages/Contact";
 
 export interface AppRoute {
   path?: string;
@@ -14,6 +16,8 @@ export interface AppRoute {
 export const webRoutes = {
   home: "/",
   branch: "/gymbranch"
+  promotion: "/promotion",
+  contact: "/contact"
   // discover: "/discover",
 };
 
@@ -29,6 +33,8 @@ const appRoutes: AppRoute[] = [
     element: <Layout />,
     children: [
       { path: webRoutes.home, element: <ProfilePage /> },
+      { path: webRoutes.promotion, element: <Promotion /> },
+      { path: webRoutes.contact, element: <Contact /> },
       // { path: webRoutes.discover, element: <DiscoverPage /> },
     ],
   },
