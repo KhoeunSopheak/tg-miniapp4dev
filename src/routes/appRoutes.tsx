@@ -1,8 +1,11 @@
 import { JSX } from "react";
 import { createBrowserRouter } from "react-router-dom";
 import ProfilePage from "../pages/ProfilePage";
+import GymBranch from "../pages/GymBranch";
 import Layout from "../pages/Layout";
 import Pricing from "../pages/Pricing";
+import Promotion from "../pages/Promotion";
+import Contact from "../pages/Contact";
 
 export interface AppRoute {
   path?: string;
@@ -14,6 +17,9 @@ export interface AppRoute {
 export const webRoutes = {
   home: "/",
   pricing: "/pricing",
+  branch: "/gymbranch"
+  promotion: "/promotion",
+  contact: "/contact"
   // discover: "/discover",
 };
 
@@ -30,6 +36,16 @@ const appRoutes: AppRoute[] = [
     children: [
       { path: webRoutes.home, element: <ProfilePage /> },
       { path: webRoutes.pricing, element: <Pricing /> },
+      { path: webRoutes.promotion, element: <Promotion /> },
+      { path: webRoutes.contact, element: <Contact /> },
+      // { path: webRoutes.discover, element: <DiscoverPage /> },
+    ],
+  },
+  {
+    path: "/gymbranch",
+    element: <Layout />,
+    children: [
+      { path: webRoutes.branch, element: <GymBranch /> },
       // { path: webRoutes.discover, element: <DiscoverPage /> },
     ],
   },
