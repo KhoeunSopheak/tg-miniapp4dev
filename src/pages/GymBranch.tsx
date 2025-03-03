@@ -20,7 +20,7 @@ const branches = [
     name: "HULK-GYM CAMBODIA",
     address: "St No.217, Chamkar Doeng, Khan Dangkor, Phnom Penh City",
     hours: "9:00AM - 9:00PM",
-    image: "https://lh5.googleusercontent.com/p/AF1QipN51NaIB2q6zRmMeTGW05XXAXUS5Yn-dpdiZucz=w480-h300-k-n-rw",
+    image: "https://content.jdmagicbox.com/comp/phagwara/j8/9999p1824.1824.170903115502.j3j8/catalogue/the-fitness-hub-gym-banga-road-phagwara-gyms-lkr3t8qr9q.jpg",
   },
   {
     id: 4,
@@ -40,11 +40,11 @@ const branches = [
 
 export default function GymBranch() {
   return (
-    <div className="min-h-screen w-[430px] bg-black text-white mx-auto p-4 space-y-6">
+    <div className="min-h-screen w-full bg-black text-white mx-auto p-4 space-y-6">
       {/* Header */}
       <div>
-        <h1 className="text-2xl font-bold text-[#7CFC00]">All the gym Branch</h1>
-        <p className="text-gray-400 text-sm">You can view our Branch and also contact to us!</p>
+        <h1 className="text-2xl font-bold text-[#5C9C31]">All the gym Branch</h1>
+        <p className="text-white text-sm">You can view our Branch and also contact to us!</p>
       </div>
 
       {/* Branch Cards */}
@@ -53,17 +53,17 @@ export default function GymBranch() {
           <div key={branch.id} className="rounded-xl overflow-hidden border border-gray-800 bg-[#111] p-4">
             <img src={branch.image} alt={branch.name} className="w-full h-48 object-cover rounded-lg" />
             <div className="mt-4">
-              <h2 className="text-[#7CFC00] font-bold">{branch.name}</h2>
+              <h2 className="text-[#5C9C31] flex items-start font-bold">{branch.name}</h2>
               <div className="flex items-start space-x-2 mt-2">
-                <MapPin className="h-4 w-4 text-gray-400" />
+                <MapPin className="h-4 w-4 text-white" />
                 <p className="text-sm text-gray-300">{branch.address}</p>
               </div>
               <div className="flex items-center space-x-2 mt-2">
-                <Clock className="h-4 w-4 text-gray-400" />
+                <Clock className="h-4 w-4 text-white" />
                 <p className="text-sm text-gray-300">{branch.hours}</p>
               </div>
               <div className="flex justify-end mt-4">
-                <button className="bg-[#7CFC00] text-black px-4 py-1 rounded-md text-sm font-medium"><a href="">Map</a></button>
+                <button className="bg-[#5C9C31] text-white px-4 py-1 rounded-md text-sm font-medium"><a href="">Map</a></button>
               </div>
             </div>
           </div>

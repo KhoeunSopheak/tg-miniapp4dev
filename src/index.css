@@ -15,3 +15,23 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+
+/* Add these to your existing CSS */
+@supports (padding: max(0px)) {
+  .safe-area-bottom {
+    padding-bottom: max(env(safe-area-inset-bottom), 0.75rem);
+  }
+}
+
+/* Optional: Add smooth scrolling to the whole page */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Prevent content from being hidden under the bottom navigation on mobile */
+@media (max-width: 1024px) {
+  body {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+}
