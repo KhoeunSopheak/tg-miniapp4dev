@@ -17,7 +17,7 @@ export interface AppRoute {
 export const webRoutes = {
   home: "/",
   pricing: "/pricing",
-  branch: "/gymbranch"
+  branch: "/gymbranch",
   promotion: "/promotion",
   contact: "/contact"
   // discover: "/discover",
@@ -38,17 +38,18 @@ const appRoutes: AppRoute[] = [
       { path: webRoutes.pricing, element: <Pricing /> },
       { path: webRoutes.promotion, element: <Promotion /> },
       { path: webRoutes.contact, element: <Contact /> },
-      // { path: webRoutes.discover, element: <DiscoverPage /> },
-    ],
-  },
-  {
-    path: "/gymbranch",
-    element: <Layout />,
-    children: [
       { path: webRoutes.branch, element: <GymBranch /> },
       // { path: webRoutes.discover, element: <DiscoverPage /> },
     ],
   },
+  // {
+  //   path: "/gymbranch",
+  //   element: <Layout />,
+  //   children: [
+  //     { path: webRoutes.branch, element: <GymBranch /> },
+  //     // { path: webRoutes.discover, element: <DiscoverPage /> },
+  //   ],
+  // },
   {
     path: "*",
     element: <div>NotFoundPage</div>,
