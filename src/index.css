@@ -24,14 +24,21 @@
   }
 }
 
-/* Optional: Add smooth scrolling to the whole page */
-html {
-  scroll-behavior: smooth;
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
 }
 
-/* Prevent content from being hidden under the bottom navigation on mobile */
-@media (max-width: 1024px) {
-  body {
-    padding-bottom: env(safe-area-inset-bottom);
+#root {
+  height: 100%;
+}
+
+/* For mobile devices with notches */
+@supports (padding: max(0px)) {
+  .safe-area-bottom {
+    padding-bottom: max(env(safe-area-inset-bottom), 0.75rem);
   }
 }
