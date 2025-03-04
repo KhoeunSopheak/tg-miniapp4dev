@@ -8,17 +8,20 @@ import { Avatar, AvatarFallback, AvatarImage } from "../components/ui/avatar"
 export default function FitnessApp() {
   const [activeTab, setActiveTab] = useState("beginner")
 
-  const days = [
-    { day: "22", date: "22" },
-    { day: "23", date: "23" },
-    { day: "24", date: "24", active: true },
-    { day: "25", date: "25" },
-    { day: "26", date: "26" },
-    { day: "27", date: "27" },
-    { day: "28", date: "28" },
-    { day: "01", date: "01" },
-    { day: "02", date: "02" },
-  ]
+  const today = new Date();
+  const currentDay = today.getDate();
+  const currentMonth = today.getMonth();
+  const currentYear = today.getFullYear();
+  
+  // Get the total number of days in the current month
+  const daysInMonth = new Date(currentYear, currentMonth + 1, 0).getDate();
+  
+  // Calculate the range (4 days before and 4 days after today)
+  const startDay = Math.max(1, currentDay - 4);
+  const endDay = Math.min(daysInMonth, currentDay + 4);
+  
+  // Generate only the required days
+  const days = Array.from({ length: endDay - startDay + 1 }, (_, index) => startDay + index);
 
   const workouts = [
     {
@@ -46,9 +49,16 @@ export default function FitnessApp() {
       title: "ABS BEGINNER",
       duration: "20 MINS",
       exercises: "16 EXERCISES",
-      image: "/placeholder.svg?height=200&width=400",
+      image: "https://t4.ftcdn.net/jpg/01/74/21/25/360_F_174212531_cerVf4uP6vinBWieBB46p2P5xVhnsNSK.jpg",
       category: "intermediate",
     },
+    {
+      title: "ABS BEGINNER",
+      duration: "20 MINS",
+      exercises: "16 EXERCISES",
+      image: "https://freerangestock.com/sample/114350/women-doing-exercises-on-yoga-mats-in-a-gym.jpg",
+      category: "advance",
+    }
   ]
 
   return (
@@ -56,9 +66,8 @@ export default function FitnessApp() {
         {/* Header */}
         <div className="p-4 flex justify-between items-center">
           <span className="text-gray-400">Home</span>
-          <Avatar className="h-8 w-8">
-            <AvatarImage src="/placeholder.svg?height=32&width=32" alt="User" />
-            <AvatarFallback>A</AvatarFallback>
+          <Avatar className="h-16 w-16">
+            <AvatarImage className="object-cover" sizes="50px" src="https://media.gettyimages.com/id/1324042769/photo/confident-gym-owner.jpg?s=612x612&w=gi&k=20&c=FPL4Bc9rrHUq7JWwILrOHNUOHMfF9XhhCMUwKfuVCiI=" alt="User" />
           </Avatar>
         </div>
 
@@ -80,18 +89,18 @@ export default function FitnessApp() {
             </div>
 
             <div className="flex justify-between">
-              {days.map((day, index) => (
-                <div
-                  key={index}
-                  className={cn(
-                    "flex flex-col items-center justify-center w-8 h-8 rounded-full",
-                    day.active ? "bg-green-500 text-black" : "text-gray-400",
-                  )}
-                >
-                  <span className="text-xs">{day.day}</span>
-                </div>
-              ))}
-            </div>
+      {days.map((day) => (
+        <div
+          key={day}
+          className={cn(
+            "flex flex-col items-center justify-center w-8 h-8 rounded-full",
+            day === currentDay ? "bg-green-500 text-black" : "text-gray-400"
+          )}
+        >
+          <span className="text-xs">{day}</span>
+        </div>
+      ))}
+    </div>
           </div>
 
           {/* Difficulty tabs */}
@@ -141,7 +150,6 @@ export default function FitnessApp() {
 
             {activeTab === "intermediate" && (
               <>
-                <div className="text-gray-400 mb-2">Intermediate</div>
                 {workouts
                   .filter((workout) => workout.category === "intermediate")
                   .map((workout, index) => (
@@ -150,7 +158,15 @@ export default function FitnessApp() {
               </>
             )}
 
-            {activeTab === "advance" && <div className="text-gray-400 mb-2">No advanced workouts available yet</div>}
+            {activeTab === "advance" && (
+               <>
+               {workouts
+                 .filter((workout) => workout.category === "advance")
+                 .map((workout, index) => (
+                   <WorkoutCard key={index} workout={workout} />
+                 ))}
+             </>
+            )}
           </div>
         </div>
       </div>
