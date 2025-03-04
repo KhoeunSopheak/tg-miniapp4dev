@@ -44,12 +44,12 @@ const Layout = (): JSX.Element => {
       <div className="flex-1 overflow-y-auto pb-20">
         <div className="max-w-7xl mx-auto">
           {/* Mobile header */}
-          <div className="flex items-center justify-between mb-4 p-4">
+          <div className="flex items-center justify-between mb-4">
             <span className="text-xl font-bold">Fitness App</span>
           </div>
           
           {/* Main content - FIXED: Added a wrapper with proper height and overflow */}
-          <div className="h-full p-4">
+          <div className="h-full ">
             <Outlet />
           </div>
         </div>

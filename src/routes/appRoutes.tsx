@@ -9,6 +9,7 @@ import Contact from "../pages/Contact";
 import Workout from "../pages/Workout";
 import Info from "../pages/info";
 import Coupon from "../pages/Coupon";
+import WeeklyGoal from "../pages/Setdate";
 
 export interface AppRoute {
   path?: string;
@@ -26,6 +27,7 @@ export const webRoutes = {
   workout: "/workout",
   info: "/info",
   coupon: "/coupon",
+  weeklygaol: "/weeklygaol"
   // discover: "/discover",
 };
 
@@ -48,7 +50,7 @@ const appRoutes: AppRoute[] = [
       { path: webRoutes.workout, element: <Workout /> },
       { path: webRoutes.info, element: <Info /> },
       { path: webRoutes.coupon, element: <Coupon /> },
-
+      { path: webRoutes.weeklygaol, element:<WeeklyGoal/>},
       // { path: webRoutes.discover, element: <DiscoverPage /> },
     ],
   },
