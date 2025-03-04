@@ -18,8 +18,8 @@ const NavItem = ({ icon, label, path }: NavItemProps): JSX.Element => {
       <div 
         className={cn(
           "mb-1 transition-colors duration-200",
-          "group-hover:text-green-400",
-          isActive ? "text-white-500" : "text-green-500"
+          "group-hover:text-[#5C9C31]",
+          isActive ? "text-white-500" : "text-[#5C9C31]"
         )}
       >
         {icon}
@@ -27,8 +27,8 @@ const NavItem = ({ icon, label, path }: NavItemProps): JSX.Element => {
       <span 
         className={cn(
           "text-xs transition-colors duration-200",
-          "group-hover:text-green-400",
-          isActive ? "text-white-500" : "text-green-500"
+          "group-hover:text-[#5C9C31]",
+          isActive ? "text-white-500" : "text-[#5C9C31]"
         )}
       >
         {label}

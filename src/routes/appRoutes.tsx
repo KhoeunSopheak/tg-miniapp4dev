@@ -6,6 +6,7 @@ import Layout from "../pages/Layout";
 import Pricing from "../pages/Pricing";
 import Promotion from "../pages/Promotion";
 import Contact from "../pages/Contact";
+import Workout from "../pages/Workout";
 
 export interface AppRoute {
   path?: string;
@@ -19,7 +20,8 @@ export const webRoutes = {
   pricing: "/pricing",
   branch: "/gymbranch",
   promotion: "/promotion",
-  contact: "/contact"
+  contact: "/contact",
+  workout: "/workout"
   // discover: "/discover",
 };
 
@@ -39,6 +41,7 @@ const appRoutes: AppRoute[] = [
       { path: webRoutes.promotion, element: <Promotion /> },
       { path: webRoutes.contact, element: <Contact /> },
       { path: webRoutes.branch, element: <GymBranch /> },
+      { path: webRoutes.workout, element: <Workout /> },
       // { path: webRoutes.discover, element: <DiscoverPage /> },
     ],
   },
