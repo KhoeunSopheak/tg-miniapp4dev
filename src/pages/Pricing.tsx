@@ -1,6 +1,4 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
-import { ArrowLeft } from "lucide-react"; // Import the back icon
 
 
 const SubscriptionPlan: React.FC = () => {
@@ -9,10 +7,7 @@ const SubscriptionPlan: React.FC = () => {
   return (
     <div className=" w-full h-full mx-auto p-6 bg-black text-white">
       <div className="">
-      {/* <h2 className="text-center text-lg font-semibold mb-4">Choose Your Plan</h2> */}
-      <Link to="/previous-page" className="absolute top-4 left-4 text-white">
-          <ArrowLeft size={24} />
-        </Link>
+
 
         {/* Title */}
         <h2 className="text-[#5C9C31] text-xl font-semibold text-center mb-8">
