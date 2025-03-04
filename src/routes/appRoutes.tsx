@@ -17,7 +17,7 @@ export interface AppRoute {
 export const webRoutes = {
   home: "/",
   pricing: "/pricing",
-  branch: "/gymbranch"
+  branch: "/gymbranch",
   promotion: "/promotion",
   contact: "/contact"
   // discover: "/discover",
