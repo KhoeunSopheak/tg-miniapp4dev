@@ -31,14 +31,14 @@ export default function ContactForm() {
 
     try {
       const result = await emailjs.send(
-        "YOUR_SERVICE_ID", // Replace with your EmailJS service ID
-        "YOUR_TEMPLATE_ID", // Replace with your EmailJS template ID
+        "service_q24f7tu", // Replace with your EmailJS service ID
+        "template_t0zlb48", // Replace with your EmailJS template ID
         {
           from_name: formData.fullname,
           from_email: formData.email,
           message: formData.message,
         },
-        "YOUR_PUBLIC_KEY", // Replace with your EmailJS public key
+        "THHZPFOxw0xEaB5Hd", // Replace with your EmailJS public key
       )
 
       console.log(result.text)
