@@ -1,10 +1,4 @@
 import {
-  Grid3x3,
-  Download,
-  Settings,
-  Award,
-  Heart,
-  FileText,
   Dumbbell,
 } from "lucide-react"
 

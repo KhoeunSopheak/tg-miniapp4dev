@@ -1,6 +1,6 @@
 import type { ReactNode, JSX } from "react"
 import { Outlet, useLocation, Link } from "react-router-dom"
-import { HomeIcon, MapPin, PieChart, Tag, Ticket, Zap, Info, Mail } from 'lucide-react'
+import { HomeIcon, MapPin, PieChart, Tag, Ticket, Info, Mail } from 'lucide-react'
 import { cn } from "../lib/utils"
 
 interface NavItemProps {
