@@ -3,7 +3,7 @@
 import { useState } from "react"
 import { ChevronRight, Hand } from "lucide-react"
 import { cn } from "../lib/utils"
-import { Avatar, AvatarFallback, AvatarImage } from "../components/ui/avatar"
+import { Avatar, AvatarImage } from "../components/ui/avatar"
 import { useNavigate } from "react-router-dom";
 
 export default function FitnessApp() {
