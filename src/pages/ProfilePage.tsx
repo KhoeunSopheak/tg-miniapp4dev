@@ -4,9 +4,11 @@ import { useState } from "react"
 import { ChevronRight, Hand } from "lucide-react"
 import { cn } from "../lib/utils"
 import { Avatar, AvatarFallback, AvatarImage } from "../components/ui/avatar"
+import { useNavigate } from "react-router-dom";
 
 export default function FitnessApp() {
   const [activeTab, setActiveTab] = useState("beginner")
+  const navigate = useNavigate();
 
   const today = new Date();
   const currentDay = today.getDate();
@@ -67,7 +69,7 @@ export default function FitnessApp() {
         <div className="p-4 flex justify-between items-center">
           <span className="text-gray-400">Home</span>
           <Avatar className="h-16 w-16">
-            <AvatarImage className="object-cover" sizes="50px" src="https://media.gettyimages.com/id/1324042769/photo/confident-gym-owner.jpg?s=612x612&w=gi&k=20&c=FPL4Bc9rrHUq7JWwILrOHNUOHMfF9XhhCMUwKfuVCiI=" alt="User" />
+            <AvatarImage className="object-cover" sizes="50px" src="https://i.pinimg.com/736x/61/28/51/612851730703526ac510dcbaca260117.jpg" alt="User" />
           </Avatar>
         </div>
 
@@ -82,10 +84,13 @@ export default function FitnessApp() {
           <div className="bg-white rounded-2xl p-4 mb-6">
             <div className="flex justify-between items-center mb-2">
               <span className="font-medium text-black">Weekly gaol</span>
-              <div className="flex items-center gap-1">
-                <span className="text-green-500">1/7</span>
-                <ChevronRight className="h-4 w-4 text-gray-400" />
-              </div>
+              <button 
+      className="flex items-center gap-1"
+      onClick={() => navigate("/weeklygaol")}
+    >
+      <span className="text-green-500">1/7</span>
+      <ChevronRight className="h-4 w-4 text-gray-400" />
+    </button>
             </div>
 
             <div className="flex justify-between">
@@ -183,6 +188,7 @@ interface Workout {
 
 function WorkoutCard({ workout }: { workout: Workout }) {
   return (
+    <a href="/workout" className="block">
     <div className="relative rounded-xl overflow-hidden h-24 md:h-32">
       <img src={workout.image || "/placeholder.svg"} alt={workout.title} className="object-cover w-full h-full" />
       <div className="absolute inset-0 bg-black/40 p-4 flex flex-col justify-between">
@@ -192,6 +198,7 @@ function WorkoutCard({ workout }: { workout: Workout }) {
         </div>
       </div>
     </div>
+    </a>
   )
 }
 

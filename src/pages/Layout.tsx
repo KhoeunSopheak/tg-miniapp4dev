@@ -72,7 +72,6 @@ const Layout = (): JSX.Element => {
           <NavItem icon={<PieChart className="h-5 w-5" />} label="Pricing" path="/pricing" />
           <NavItem icon={<Tag className="h-5 w-5" />} label="Promotion" path="/promotion" />
           <NavItem icon={<Ticket className="h-5 w-5" />} label="Coupon" path="/coupon" />
-          <NavItem icon={<Zap className="h-5 w-5" />} label="Workout" path="/workout" />
           <NavItem icon={<Info className="h-5 w-5" />} label="Info" path="/info" />
           <NavItem icon={<Mail className="h-5 w-5" />} label="Contact" path="/contact" />
         </div>

@@ -17,6 +17,7 @@ export default function WeeklyGoal() {
   }
 
   const handleSave = () => {
+    window.history.back()
     console.log({
       weeklyTrainingDays: selectedDays,
       firstDayOfWeek: firstDay,
@@ -27,7 +28,7 @@ export default function WeeklyGoal() {
     <div className="min-h-screen bg-black text-white p-4 sm:p-6 md:p-8">
       <div className="max-w-md mx-auto">
         {/* Header */}
-        <div className="mb-8">
+        <div className="mb-8 flex justify-start">
           <button
             className="p-2 -ml-2 hover:bg-white/10 rounded-full transition-colors"
             onClick={() => window.history.back()}
@@ -98,13 +99,18 @@ export default function WeeklyGoal() {
               <SelectTrigger className="w-full h-12 bg-white/10 border-0 focus:ring-2 focus:ring-green-500 focus:ring-offset-2 focus:ring-offset-black">
                 <SelectValue placeholder="Select first day" />
               </SelectTrigger>
-              <SelectContent>
+              <SelectContent className="bg-gray-800 text-white rounded-md shadow-lg">
                 {DAYS_OF_WEEK.map((day) => (
-                  <SelectItem key={day} value={day} className="cursor-pointer">
+                  <SelectItem
+                    key={day}
+                    value={day}
+                    className="cursor-pointer hover:bg-gray-700 px-3 py-2 rounded-md"
+                  >
                     {day}
                   </SelectItem>
                 ))}
               </SelectContent>
+
             </Select>
           </div>
 
